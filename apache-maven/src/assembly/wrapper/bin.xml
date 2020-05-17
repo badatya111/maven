@@ -52,6 +52,7 @@ under the License.
     </file>
     <file>
       <sources>
+        <source>src/assembly/shared/validate.cmd</source>
         <source>src/assembly/shared/init.cmd</source>
         <source>src/assembly/shared/mvnwlauncher.cmd</source>
         <source>src/assembly/shared/run.cmd</source>

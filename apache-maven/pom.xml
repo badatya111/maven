@@ -130,6 +130,10 @@ under the License.
             <excludes combine.children="append">
               <exclude>src/assembly/maven/bin/m2.conf</exclude>
               <!-- these are partial scripts, resulting in mvn/mwnw scripts -->
+              <exclude>src/assembly/shared/init.cmd</exclude>
+              <exclude>src/assembly/shared/mvnlauncher</exclude>
+              <exclude>src/assembly/shared/mvnlauncher.cmd</exclude>
+              <exclude>src/assembly/shared/mvnvalidate.cmd</exclude>
               <exclude>src/assembly/shared/mvnwlauncher</exclude>
               <exclude>src/assembly/shared/mvnwlauncher.cmd</exclude>
               <exclude>src/assembly/shared/run</exclude>
