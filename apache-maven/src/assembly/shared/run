@@ -6,6 +6,5 @@ export MAVEN_CMD_LINE_ARGS
 exec "$JAVACMD" \
   $MAVEN_OPTS \
   -classpath ${LAUNCHER_JAR} \
-  $MAVENHOME_CONFIG \ 
-  "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
+  $MAVENHOME_CONFIG "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
   $MAVEN_LAUNCHER $MAVEN_CONFIG "$@"
