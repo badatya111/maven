@@ -91,7 +91,7 @@ cd "$saveddir"
 # For Cygwin, ensure paths are in Unix format before anything is touched
 if $cygwin ; then
   [ -n "$MAVEN_HOME" ] &&
-    MAVEN_HOME=`cygpath --unix "$M2_HOME"`
+    MAVEN_HOME=`cygpath --unix "$MAVEN_HOME"`
   [ -n "$JAVA_HOME" ] &&
     JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
   [ -n "$CLASSPATH" ] &&
