@@ -122,7 +122,7 @@ under the License.
         <source>src/assembly/shared/mvnlauncher</source>
         <source>src/assembly/shared/run</source>
       </sources>
-      <destName>mvn3</destName>
+      <destName>mvn</destName>
       <outputDirectory>bin</outputDirectory>
       <lineEnding>unix</lineEnding>
       <fileMode>0755</fileMode>
