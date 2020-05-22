@@ -39,10 +39,10 @@ if [ -z "$MAVEN_SKIP_RC" ] ; then
 
 fi
 
-# OS specific support.  $var _must_ be set to either true or false.
+# OS specific support. $var _must_ be set to either true or false.
 cygwin=false;
-darwin=false;
 mingw=false
+darwin=false;
 case "`uname`" in
   CYGWIN*) cygwin=true ;;
   MINGW*) mingw=true;;
@@ -65,48 +65,45 @@ if [ -z "$JAVA_HOME" ] ; then
   fi
 fi
 
-if [ -z "$M2_HOME" ] ; then
-  ## resolve links - $0 may be a link to maven's home
-  PRG="$0"
+## resolve links - $0 may be a link to Maven's home
+PRG="$0"
 
-  # need this for relative symlinks
-  while [ -h "$PRG" ] ; do
-    ls=`ls -ld "$PRG"`
-    link=`expr "$ls" : '.*-> \(.*\)$'`
-    if expr "$link" : '/.*' > /dev/null; then
-      PRG="$link"
-    else
-      PRG="`dirname "$PRG"`/$link"
-    fi
-  done
+# need this for relative symlinks
+while [ -h "$PRG" ] ; do
+  ls=`ls -ld "$PRG"`
+  link=`expr "$ls" : '.*-> \(.*\)$'`
+  if expr "$link" : '/.*' > /dev/null; then
+    PRG="$link"
+  else
+    PRG="`dirname "$PRG"`/$link"
+  fi
+done
 
-  saveddir=`pwd`
+saveddir=`pwd`
 
-  M2_HOME=`dirname "$PRG"`/..
+MAVEN_HOME=`dirname "$PRG"`/..
 
-  # make it fully qualified
-  M2_HOME=`cd "$M2_HOME" && pwd`
+# make it fully qualified
+MAVEN_HOME=`cd "$MAVEN_HOME" && pwd`
 
-  cd "$saveddir"
-  # echo Using m2 at $M2_HOME
-fi
+cd "$saveddir"
 
-# For Cygwin, ensure paths are in UNIX format before anything is touched
+# For Cygwin, ensure paths are in Unix format before anything is touched
 if $cygwin ; then
-  [ -n "$M2_HOME" ] &&
-    M2_HOME=`cygpath --unix "$M2_HOME"`
+  [ -n "$MAVEN_HOME" ] &&
+    MAVEN_HOME=`cygpath --unix "$M2_HOME"`
   [ -n "$JAVA_HOME" ] &&
     JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
   [ -n "$CLASSPATH" ] &&
     CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
 fi
 
-# For Mingw, ensure paths are in UNIX format before anything is touched
+# For Mingw, ensure paths are in Unix format before anything is touched
 if $mingw ; then
-  [ -n "$M2_HOME" ] &&
-    M2_HOME="`(cd "$M2_HOME"; pwd)`"
+  [ -n "$MAVEN_HOME" ] &&
+    MAVEN_HOME=`(cd "$MAVEN_HOME"; pwd)`
   [ -n "$JAVA_HOME" ] &&
-    JAVA_HOME="`(cd "$JAVA_HOME"; pwd)`"
+    JAVA_HOME=`(cd "$JAVA_HOME"; pwd)`
 fi
 
 if [ -z "$JAVA_HOME" ]; then
@@ -143,8 +140,9 @@ if [ -z "$JAVACMD" ] ; then
 fi
 
 if [ ! -x "$JAVACMD" ] ; then
-  echo "Error: JAVA_HOME is not defined correctly." >&2
-  echo "  We cannot execute $JAVACMD" >&2
+  echo "The JAVA_HOME environment variable is not defined correctly" >&2
+  echo "This environment variable is needed to run this program" >&2
+  echo "NB: JAVA_HOME should point to a JDK not a JRE" >&2
   exit 1
 fi
 
@@ -202,7 +200,7 @@ find_file_argument_basedir() {
 # concatenates all lines of a file
 concat_lines() {
   if [ -f "$1" ]; then
-    echo "$(tr -s '\n' ' ' < "$1")"
+    echo "`tr -s '\r\n' '  ' < "$1"`"
   fi
 }
 
